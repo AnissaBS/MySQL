@@ -1,0 +1,55 @@
+--- File cleaned up by Wampserver installation or update ---
+2023-10-02T07:34:24.201696Z 0 [System] [MY-010116] [Server] c:\wamp64\bin\mysql\mysql8.0.31\bin\mysqld.exe (mysqld 8.0.31) starting as process 13632
+2023-10-02T07:34:24.286259Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-10-02T07:34:24.675892Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-10-02T07:34:25.090972Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-10-02T07:34:25.091824Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-10-02T07:34:25.144336Z 0 [System] [MY-010931] [Server] c:\wamp64\bin\mysql\mysql8.0.31\bin\mysqld.exe: ready for connections. Version: '8.0.31'  socket: ''  port: 3306  MySQL Community Server - GPL.
+
+																													-- TP SQL1 --
+
+-- Exercice 1 --
+
+-- Q1 --
+select * from utilisateurs;
+
+-- Q2 --
+SELECT nom, prenom from utilisateurs;
+
+
+-- Exercice 2 --
+
+-- Q1 --
+select * from commandes where id_utilisateur=1;
+
+-- Q2 --
+select utilisateur, sum(quantite) as quantite_util from commandes goup by utilisateur;
+
+-- Exercice 3 --
+
+-- Q1 --
+select * from produits where prix>50 or stock>50;
+
+-- Q2 --
+select nom, sum(quantite) as quatite_totale from produits group by nom_produit;
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+																													-- TP SQL2 --
+
+-- Exercice 1 --
+
+-- Q1 --
+select * from employes where salaire>50000;
+
+-- Q2 --
+select salaire, (salaire*0.1) as salaire_aug from employes;
+
+-- Q3 --
+insert into employes(id_employes, nom, prenom, poste, salaire) values('', "Smith", "John", "Manager", 60000);
+
+-- Q4 --
+delete (*) from employes where salaire<40000;
